@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# use neovim for vim if present (from https://github.com/LukeSmithxyz/voidrice/blob/master/.config/aliasrc)
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+alias ls='ls -hN --color=auto --group-directories-first' \
+   ll='ls -l' \
+   la='ls -A' \
+   l='ls -CF'
+
+alias e="$EDITOR" \
+   v="$EDITOR" \
+   vim="nvim" \
+   vimdiff="nvim -d" \
+   r="ranger" \
+   m="mutt" \
+   z="zathura"
+
+alias df="df -h" \
+   grep="grep --color=auto" \
+   ssh="ssh -X" \
+   ipython="ipython --no-confirm-exit" \
+   nano="nano -Sl"
+
+alias plotdig="java -Xmx128m -jar $HOME/.local/bin/plot_digitizer/PlotDigitizer.jar 2>/dev/null"
+
+function cp_to_xrays () {
+    scp -r $1 asimazbunzel@xrays.fcaglp.unlp.edu.ar:$2
+}
+function cp_to_xmm () {
+        scp -r $1 asimazbunzel@xmm-newton.fcaglp.unlp.edu.ar:$2
+}

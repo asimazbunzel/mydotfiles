@@ -1,0 +1,40 @@
+# SCREENRC
+#
+# Most of this options were obtained from:
+# https://gist.github.com/joaopizani/2718397
+
+# Backtick commands
+backtick 1 60 60 /home/asimazbunzel/.local/bin/tools/memory
+backtick 2 60 60 cpu
+
+# For details of status bar at bottom of terminal, see explanation in:
+# https://www.kilobitspersecond.com/2014/02/10/understanding-gnu-screens-hardstatus-strings/
+hardstatus alwayslastline
+hardstatus string '%{= KY} @%H %{W}| RAM: %1` | CPU: %2` | %= %{= Kw}%-w%{+b yk}(%n) %t %{-}%+w %= | %{g} %{Y}%m/%d %{Y}%C%A%{g} '
+
+# huge scrollback buffer
+defscrollback 5000
+
+# no welcome message
+startup_message off
+
+# 256 colors
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+
+# default screens
+select 0
+bind c screen 1 # window numbering starts at 1 not 0
+bind 0 select 10
+
+# control-left and control-right switch windows
+bindkey "5D" prev
+bindkey "5C" next
+
+# get rid of silly xoff stuff
+bind s split
+
+# disable visual bell
+vbell off
+bell_msg ""

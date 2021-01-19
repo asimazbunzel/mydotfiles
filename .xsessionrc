@@ -1,0 +1,9 @@
+# Originally, i3 cannot pick up $PATH from .bashrc
+# It should do it from .profile, but it doesn't. So
+# according to i3wm FAQ, the $PATH to where scripts
+# I have ($HOME/.scripts) must be set up in this file
+# and it seems to be working
+# 
+# source: https://faq.i3wm.org/question/4973/config-dmenu-not-picking-up-user-path.1.html
+
+PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"

@@ -1,0 +1,670 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;==========================================================
+
+;=====================================================
+;   colors
+;=====================================================
+[colors]
+material-foreground = #dedede
+material-dark-background = #242424
+material-light-background = #333333
+material-primary = #315bef
+material-warn = #fc4138
+
+green = #FFFF00
+yellow = #008000
+
+;=====================================================
+;   variables
+;=====================================================
+[variables]
+bar-height = 18
+bar-border-size = 0
+
+label-padding = 1
+label-maxlen = 50
+
+;=====================================================
+;   fonts
+;=====================================================
+[fonts]
+; Text Fonts
+font-0 = Iosevka Nerd Font:style=Medium:size=8;3
+; Icons Fonts
+font-1 = icomoon\-feather:style=Medium:size=9;3
+; Powerline Glyphs
+font-2 = Iosevka Nerd Font:style=Medium:size=12;3
+; Larger font size for bar fill icons
+font-3 = Iosevka Nerd Font:style=Medium:size=12;3
+; Smaller font size for shorter spaces
+font-4 = Iosevka Nerd Font:style=Medium:size=7;3
+font-5 = Font Awesome 5 Free:size=9:weight=bold:antialias=true;2
+
+;=====================================================
+;   bar/top
+;=====================================================
+[bar/main]
+monitor = VGA-0
+; monitor = ${env:MONITOR}
+
+width = 100%
+height = ${variables.bar-height}
+bottom = false
+fixed-center = true
+
+border-bottom-size = ${variables.bar-border-size}
+border-color = ${colors.material-dark-background}
+
+background = ${colors.material-light-background}
+foreground = ${colors.material-foreground}
+
+font-0 = ${fonts.font-0}
+font-1 = ${fonts.font-1}
+font-2 = ${fonts.font-2}
+font-3 = ${fonts.font-3}
+font-4 = ${fonts.font-4}
+font-5 = ${fonts.font-5}
+
+modules-left = i3 lpd wifi ldl
+modules-right = spotify rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
+
+;=====================================================
+;   section/base_left_primary
+;=====================================================
+[section/base_left_primary]
+
+format-foreground = ${colors.material-foreground}
+format-background = ${colors.material-primary}
+format-connected-foreground = ${colors.material-foreground}
+format-connected-background = ${colors.material-primary}
+format-warn-foreground = ${colors.material-foreground}
+format-warn-background = ${colors.material-primary}
+format-volume-foreground = ${colors.material-foreground}
+format-volume-background = ${colors.material-primary}
+format-muted-foreground = ${colors.material-foreground}
+format-muted-background = ${colors.material-primary}
+format-charging-foreground = ${colors.material-foreground}
+format-charging-background = ${colors.material-primary}
+format-discharging-foreground = ${colors.material-foreground}
+format-discharging-background = ${colors.material-primary}
+format-full-foreground = ${colors.material-foreground}
+format-full-background = ${colors.material-primary}
+
+format-padding = ${variables.label-padding}
+format-connected-padding = ${variables.label-padding}
+format-warn-padding = ${variables.label-padding}
+format-volume-padding = ${variables.label-padding}
+format-muted-padding = ${variables.label-padding}
+format-charging-padding = ${variables.label-padding}
+format-discharging-padding = ${variables.label-padding}
+format-full-padding = ${variables.label-padding}
+
+;=====================================================
+;   section/base_left_dark
+;=====================================================
+[section/base_left_dark]
+
+format-foreground = ${colors.material-foreground}
+format-background = ${colors.material-dark-background}
+format-connected-foreground = ${colors.material-foreground}
+format-connected-background = ${colors.material-dark-background}
+format-warn-foreground = ${colors.material-foreground}
+format-warn-background = ${colors.material-dark-background}
+format-volume-foreground = ${colors.material-foreground}
+format-volume-background = ${colors.material-dark-background}
+format-muted-foreground = ${colors.material-foreground}
+format-muted-background = ${colors.material-dark-background}
+format-charging-foreground = ${colors.material-foreground}
+format-charging-background = ${colors.material-dark-background}
+format-discharging-foreground = ${colors.material-foreground}
+format-discharging-background = ${colors.material-dark-background}
+format-full-foreground = ${colors.material-foreground}
+format-full-background = ${colors.material-dark-background}
+
+format-padding = ${variables.label-padding}
+format-connected-padding = ${variables.label-padding}
+format-warn-padding = ${variables.label-padding}
+format-volume-padding = ${variables.label-padding}
+format-muted-padding = ${variables.label-padding}
+format-charging-padding = ${variables.label-padding}
+format-discharging-padding = ${variables.label-padding}
+format-full-padding = ${variables.label-padding}
+
+;=====================================================
+;   section/base_left_light
+;=====================================================
+[section/base_left_light]
+
+format-foreground = ${colors.material-foreground}
+format-background = ${colors.material-light-background}
+format-connected-foreground = ${colors.material-foreground}
+format-connected-background = ${colors.material-light-background}
+format-warn-foreground = ${colors.material-foreground}
+format-warn-background = ${colors.material-light-background}
+format-volume-foreground = ${colors.material-foreground}
+format-volume-background = ${colors.material-light-background}
+format-muted-foreground = ${colors.material-foreground}
+format-muted-background = ${colors.material-light-background}
+format-charging-foreground = ${colors.material-foreground}
+format-charging-background = ${colors.material-light-background}
+format-discharging-foreground = ${colors.material-foreground}
+format-discharging-background = ${colors.material-light-background}
+format-full-foreground = ${colors.material-foreground}
+format-full-background = ${colors.material-light-background}
+
+format-padding = ${variables.label-padding}
+format-connected-padding = ${variables.label-padding}
+format-warn-padding = ${variables.label-padding}
+format-volume-padding = ${variables.label-padding}
+format-muted-padding = ${variables.label-padding}
+format-charging-padding = ${variables.label-padding}
+format-discharging-padding = ${variables.label-padding}
+format-full-padding = ${variables.label-padding}
+
+;=====================================================
+;   section/base_right_primary
+;=====================================================
+[section/base_right_primary]
+
+format-foreground = ${colors.material-foreground}
+format-background = ${colors.material-primary}
+format-connected-foreground = ${colors.material-foreground}
+format-connected-background = ${colors.material-primary}
+format-warn-foreground = ${colors.material-foreground}
+format-warn-background = ${colors.material-primary}
+format-volume-foreground = ${colors.material-foreground}
+format-volume-background = ${colors.material-primary}
+format-muted-foreground = ${colors.material-foreground}
+format-muted-background = ${colors.material-primary}
+format-charging-foreground = ${colors.material-foreground}
+format-charging-background = ${colors.material-primary}
+format-discharging-foreground = ${colors.material-foreground}
+format-discharging-background = ${colors.material-primary}
+format-full-foreground = ${colors.material-foreground}
+format-full-background = ${colors.material-primary}
+
+format-padding = ${variables.label-padding}
+format-connected-padding = ${variables.label-padding}
+format-warn-padding = ${variables.label-padding}
+format-volume-padding = ${variables.label-padding}
+format-muted-padding = ${variables.label-padding}
+format-charging-padding = ${variables.label-padding}
+format-discharging-padding = ${variables.label-padding}
+format-full-padding = ${variables.label-padding}
+
+;=====================================================
+;   section/base_right_dark
+;=====================================================
+[section/base_right_dark]
+
+format-foreground = ${colors.material-foreground}
+format-background = ${colors.material-dark-background}
+format-connected-foreground = ${colors.material-foreground}
+format-connected-background = ${colors.material-dark-background}
+format-warn-foreground = ${colors.material-foreground}
+format-warn-background = ${colors.material-dark-background}
+format-volume-foreground = ${colors.material-foreground}
+format-volume-background = ${colors.material-dark-background}
+format-muted-foreground = ${colors.material-foreground}
+format-muted-background = ${colors.material-dark-background}
+format-charging-foreground = ${colors.material-foreground}
+format-charging-background = ${colors.material-dark-background}
+format-discharging-foreground = ${colors.material-foreground}
+format-discharging-background = ${colors.material-dark-background}
+format-full-foreground = ${colors.material-foreground}
+format-full-background = ${colors.material-dark-background}
+
+format-padding = ${variables.label-padding}
+format-connected-padding = ${variables.label-padding}
+format-warn-padding = ${variables.label-padding}
+format-volume-padding = ${variables.label-padding}
+format-muted-padding = ${variables.label-padding}
+format-charging-padding = ${variables.label-padding}
+format-discharging-padding = ${variables.label-padding}
+format-full-padding = ${variables.label-padding}
+
+;=====================================================
+;   section/base_right_light
+;=====================================================
+[section/base_right_light]
+
+format-foreground = ${colors.material-foreground}
+format-background = ${colors.material-light-background}
+format-connected-foreground = ${colors.material-foreground}
+format-connected-background = ${colors.material-light-background}
+format-warn-foreground = ${colors.material-foreground}
+format-warn-background = ${colors.material-light-background}
+format-volume-foreground = ${colors.material-foreground}
+format-volume-background = ${colors.material-light-background}
+format-muted-foreground = ${colors.material-foreground}
+format-muted-background = ${colors.material-light-background}
+format-charging-foreground = ${colors.material-foreground}
+format-charging-background = ${colors.material-light-background}
+format-discharging-foreground = ${colors.material-foreground}
+format-discharging-background = ${colors.material-light-background}
+format-full-foreground = ${colors.material-foreground}
+format-full-background = ${colors.material-light-background}
+
+format-padding = ${variables.label-padding}
+format-connected-padding = ${variables.label-padding}
+format-warn-padding = ${variables.label-padding}
+format-volume-padding = ${variables.label-padding}
+format-muted-padding = ${variables.label-padding}
+format-charging-padding = ${variables.label-padding}
+format-discharging-padding = ${variables.label-padding}
+format-full-padding = ${variables.label-padding}
+
+;=====================================================
+;   module/lsp
+;=====================================================
+[module/lsp]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-foreground}
+content-background = ${colors.material-primary}
+
+;=====================================================
+;   module/lsd
+;=====================================================
+[module/lsd]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-foreground}
+content-background = ${colors.material-dark-background}
+
+;=====================================================
+;   module/lsl
+;=====================================================
+[module/lsl]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-foreground}
+content-background = ${colors.material-light-background}
+
+;=====================================================
+;   module/ldl
+;=====================================================
+[module/ldl]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-dark-background}
+content-background = ${colors.material-light-background}
+
+
+;=====================================================
+;   module/ldp
+;=====================================================
+[module/ldp]
+type = custom/text
+
+content = %{T3}%{T-}
+content-background = ${colors.material-dark-background}
+content-foreground = ${colors.material-primary}
+
+;=====================================================
+;   module/lpd
+;=====================================================
+[module/lpd]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-primary}
+content-background = ${colors.material-dark-background}
+
+;=====================================================
+;   module/lpl
+;=====================================================
+[module/lpl]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-primary}
+content-background = ${colors.material-light-background}
+
+;=====================================================
+;   module/rsp
+;=====================================================
+[module/rsp]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-foreground}
+content-background = ${colors.material-primary}
+
+;=====================================================
+;   module/rsd
+;=====================================================
+[module/rsd]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-foreground}
+content-background = ${colors.material-dark-background}
+
+;=====================================================
+;   module/rsl
+;=====================================================
+[module/rsl]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-foreground}
+content-background = ${colors.material-light-background}
+
+;=====================================================
+;   module/rdp
+;=====================================================
+[module/rdp]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-primary}
+content-background = ${colors.material-dark-background}
+
+;=====================================================
+;   module/rld
+;=====================================================
+[module/rld]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-dark-background}
+content-background = ${colors.material-light-background}
+
+;=====================================================
+;   module/rlp
+;=====================================================
+[module/rlp]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-primary}
+content-background = ${colors.material-light-background}
+
+;=====================================================
+;   module/rpd
+;=====================================================
+[module/rpd]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-dark-background}
+content-background = ${colors.material-primary}
+
+;=====================================================
+;   module/rpl
+;=====================================================
+[module/rpl]
+type = custom/text
+
+content = %{T3}%{T-}
+content-foreground = ${colors.material-light-background}
+content-background = ${colors.material-primary}
+
+;=====================================================
+;   module/user
+;=====================================================
+[module/user]
+type = custom/text
+
+content = %{T6}%{T-} %{T2}asimazbunzel%{T-}
+content-background = ${colors.material-primary}
+content-padding = ${variables.label-padding}
+
+;=====================================================
+;   module/title
+;=====================================================
+[module/title]
+type = internal/xwindow
+inherit = section/base_left_dark
+
+label = %{T5}%{T-} %title%
+label-maxlen = ${variables.label-maxlen}
+
+;=====================================================
+;   module/i3
+;=====================================================
+[module/i3]
+type = internal/i3
+index-sort = true
+wrapping-scroll = true
+strip-wsnumbers = true
+pin-workspaces = false
+
+format-padding = ${variables.label-padding}
+format-background = ${colors.material-primary}
+
+label-focused = %{T4}●%{T-} %index%
+label-focused-font = 2
+label-focused-padding = ${variables.label-padding}
+
+label-unfocused = %{T4}◌%{T-} %index%
+label-unfocused-font = 2
+label-unfocused-padding = ${variables.label-padding}
+
+label-visible = %{T4}○%{T-} %index%
+label-visible-font = 2
+label-visible-padding = ${variables.label-padding}
+
+label-urgent = %{T4}◎%{T-} %index%
+label-urgent-font = 2
+label-urgent-padding = ${variables.label-padding}
+
+;=====================================================
+;   module/cpu
+;=====================================================
+[module/cpu]
+type = internal/cpu
+inherit = section/base_right_dark
+interval = 0.5
+
+label = %{F#c0ca33}%{T5}%{T-} %percentage-cores:3%%{F-}
+
+;=====================================================
+;   module/memory
+;=====================================================
+[module/memory]
+type = internal/memory
+inherit = section/base_right_dark
+interval = 1
+
+label = "%{F#7cb342}%{T5}%{T-} RAM: %gb_used%/%gb_total%%{F-}"
+
+;=====================================================
+;   module/wifi
+;=====================================================
+[module/wifi]
+type = internal/network
+inherit = section/base_left_dark
+;interface = ${env:IFACE_WLAN}
+;interval = 1
+;accumulate-stats = true
+
+; Get interface with "ip link | awk '/state UP/ {print $2}')""
+interface = wlxf4ec388e8b6d
+
+label-connected = "%{F#fdd835}%{T1}%{T-} %upspeed:8% %{F-} %{T3}%{T-} %{F#43a047}%{T1}%{T-} %downspeed:8%%{F-}"
+label-disconnected = "not connected"
+
+;=====================================================
+;   module/eth
+;=====================================================
+[module/eth]
+type = internal/network
+inherit = section/base_left_dark
+;interface = ${env:IFACE_ETH}
+;interval = 1
+;accumulate-stats = true
+
+label-connected = "%{T1}%{T-} %upspeed:8% %{T3}%{T-} %{T5}%{T-} %downspeed:8%"
+label-disconnected = " not connected"
+
+;=====================================================
+;   module/time
+;=====================================================
+[module/time]
+type = internal/date
+inherit = section/base_right_primary
+interval = 1
+time = %H:%M
+
+label = %{T6}%{T-} %{T2}%time%%{T-}
+
+;=====================================================
+;   module/date
+;=====================================================
+[module/date]
+type = internal/date
+inherit = section/base_right_primary
+interval = 1
+;date = %a %d.%m
+;label = %{T5}%{T-} %{T2}%date%%{T-}
+
+time = %{T5}%{T-} %I:%M %p
+time-alt = " %{T2}%a %d.%m%{T-}"
+label = %time%
+
+;=====================================================
+;   module/volume
+;=====================================================
+[module/volume]
+type = internal/alsa
+inherit = section/base_right_dark
+interval = 1
+
+label-volume = %{F#fb8c00}%{T5}%{T-} %percentage:3%%%{F-}
+label-muted = %{T5}%{T-} muted
+
+;=====================================================
+;   module/updates
+;=====================================================
+[module/updates]
+type = custom/script
+inherit = section/base_right_dark
+exec = cat ~/.local/share/debianupdates
+tail = true
+interval = 5
+
+label = %{F#e53935}%output%%{F-}
+
+;=====================================================
+;   module/weather
+;=====================================================
+[module/weather]
+type = custom/script
+inherit = section/base_right_primary
+exec = ~/.local/bin/polybar/weather
+tail = true
+interval = 5
+
+label = %output%
+
+;=====================================================
+;   module/mpd
+;=====================================================
+[module/mpd]
+type = internal/mpd
+inherit = section/base_right_primary
+interval = 1
+format-online = "%{F#BDBDBD}<icon-prev> <icon-stop> <toggle> <icon-next> <label-song>%{F-} "
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+format-stopped = ${self.format-online}
+format-offline = <label-offline>
+label-song = %title%-%artist%
+label-song-maxlen = 35
+label-song-ellipsis = true
+label-time = %elapsed% / %total%
+label-offline = " mpd is offline"
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-seekb = 
+icon-seekf = 
+icon-random = 
+icon-repeat = 
+icon-repeatone = 
+icon-single = 
+icon-consume =
+toggle-on-foreground = #ff
+toggle-off-foreground = #55
+bar-progress-width = 5
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+;=====================================================
+;   module/battery
+;=====================================================
+[module/battery]
+type = internal/battery
+inherit = section/base_right_dark
+battery = BAT0
+adapter = AC
+full-at = 95
+
+format-charging = <label-charging>
+label-charging = %{T5}%{T-} %percentage:3%%
+
+format-discharging = <label-discharging>
+label-discharging = %{T5}%{T-} %percentage:3%%
+
+format-full = <label-full>
+label-full = %{T5}%{T-} %percentage:3%%
+
+;=====================================================
+;   module/temperature
+;=====================================================
+[module/temperature]
+type = internal/temperature
+inherit = section/base_right_dark
+thermal-zone = 0
+warn-temperature = 70
+
+label = %{T5}%{T-} %temperature-c:3%
+label-warn = %{T5}%{T-} %temperature-c:3%
+
+;=====================================================
+;   module/spotify
+;=====================================================
+[module/spotify]
+type = custom/script
+inherit = section/base_right_light
+interval = 1
+format-prefix = " "
+format = "<label> "
+exec = ~/.local/bin/polybar/check-spotify-status -q -f '{artist}: {song}'
+
+;=====================================================
+;   settings
+;=====================================================
+[settings]
+screenchange-reload = false
+
+;=====================================================
+;   global/wm
+;=====================================================
+[global/wm]
+margin-top = 0
+margin-bottom = 0

@@ -1,0 +1,4 @@
+# Add the following to ~/.inputrc or /etc/inputrc
+# if Delete is not working properly in some applications
+# (see https://wiki.archlinux.org/index.php/st):
+set enable-keypad on
