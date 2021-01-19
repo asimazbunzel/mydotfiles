@@ -1,0 +1,10 @@
+# ignore neovim plugins
+**/nvim/plugged/
+
+# also, polybar tests
+**/polybar/old/
+
+# mpd stuff
+**/mpd/log
+**/mpd/pid
+**/mpd/state
