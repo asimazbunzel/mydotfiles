@@ -109,6 +109,7 @@ bindsym $mod+Shift+w		exec --no-startup-id $browser
 
 bindsym	$mod+r			exec $term -e ranger
 #bindsym $mod+Shift+r		exec
+bindsym $mod+Shift+r		exec --no-startup-id slack
 
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
@@ -243,6 +244,8 @@ for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 for_window [title="Default - Wine desktop"] floating enable
+
+for_window [class="Slack"] move workspace $ws6
 
 # Bindings to make the webcam float and stick.
 for_window [title="mpvfloat"] floating enable
