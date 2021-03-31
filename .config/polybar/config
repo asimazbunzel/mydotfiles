@@ -80,7 +80,8 @@ font-3 = ${fonts.font-3}
 font-4 = ${fonts.font-4}
 font-5 = ${fonts.font-5}
 
-modules-left = i3 lpd wifi ldl
+; modules-left = i3 lpd wifi ldl
+modules-left = i3 lpd eth ldl
 modules-right = spotify rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
 
 ;=====================================================
@@ -503,7 +504,7 @@ inherit = section/base_left_dark
 interface = wlxf4ec388e8b6d
 
 label-connected = "%{F#fdd835}%{T1}%{T-} %upspeed:8% %{F-} %{T3}%{T-} %{F#43a047}%{T1}%{T-} %downspeed:8%%{F-}"
-label-disconnected = "not connected"
+label-disconnected = " not connected"
 
 ;=====================================================
 ;   module/eth
@@ -515,8 +516,10 @@ inherit = section/base_left_dark
 ;interval = 1
 ;accumulate-stats = true
 
-label-connected = "%{T1}%{T-} %upspeed:8% %{T3}%{T-} %{T5}%{T-} %downspeed:8%"
-label-disconnected = " not connected"
+interface = enp6s0
+
+label-connected = "%{F#fdd835}%{T1}%{T-} %upspeed:8% %{F-} %{T3}%{T-} %{F#43a047}%{T1}%{T-} %downspeed:8%%{F-}"
+label-disconnected = "not connected"
 
 ;=====================================================
 ;   module/time
