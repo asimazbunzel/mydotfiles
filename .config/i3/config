@@ -333,7 +333,7 @@ bindsym XF86AudioStop		exec --no-startup-id lmc toggle
 bindsym XF86AudioRewind     exec --no-startup-id lmc back 10
 bindsym XF86AudioForward	exec --no-startup-id lmc forward 10
 
-bindsym XF86HomePage		exec firefox https://www.iar.unlp.edu.ar
+# bindsym XF86HomePage		exec firefox https://www.iar.unlp.edu.ar
 
 #bindsym XF86TouchpadToggle	exec --no-startup-id toggletouchpad
 #bindsym XF86TouchpadOn		exec --no-startup-id synclient TouchpadOff=0
@@ -342,9 +342,9 @@ bindsym XF86HomePage		exec firefox https://www.iar.unlp.edu.ar
 # NEEDS MORE WORK
 #bindsym XF86Suspend		exec --no-startup-id lockscreen
 
-bindsym XF86Mail		exec $term -e neomutt && pkill -RTMIN+12 i3blocks
+# bindsym XF86Mail		exec $term -e neomutt && pkill -RTMIN+12 i3blocks
 
-bindsym XF86Search		exec firefox https://google.com
+# bindsym XF86Search		exec firefox https://google.com
 
 #bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 15
 #bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 15
