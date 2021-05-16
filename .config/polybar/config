@@ -80,9 +80,9 @@ font-3 = ${fonts.font-3}
 font-4 = ${fonts.font-4}
 font-5 = ${fonts.font-5}
 
-; modules-left = i3 lpd wifi ldl
+modules-left = i3 lpd wifi ldl
 ; modules-right = mpd rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
-modules-left = i3 lpd eth ldl
+; modules-left = i3 lpd eth ldl
 modules-right = spotify rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
 
 ;=====================================================
