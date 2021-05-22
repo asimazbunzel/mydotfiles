@@ -95,6 +95,7 @@ let g:NERDTreeAutoDeleteBuffer = 1
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>N :NERDTreeFind<CR><Paste>
 
+
 " remove highlighted work from register
 nnoremap @ :noh<return>
 
