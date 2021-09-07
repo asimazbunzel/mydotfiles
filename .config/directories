@@ -6,6 +6,8 @@ pa $WORKDIR_HDD/Documents/papers
 bo $WORKDIR_HDD/Documents/books
 pres $WORKDIR_HDD/Documents/presentations
 
+workdir $WORKDIR_HDD
+
 dev $HOME/Developments
 prj $WORKDIR_HDD/Projects
 tux $WORKDIR_HDD/Documents/bin2bbh/evolution/tux
