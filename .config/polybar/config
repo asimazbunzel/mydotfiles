@@ -59,7 +59,7 @@ font-5 = Font Awesome 5 Free:size=9:weight=bold:antialias=true;2
 ;   bar/top
 ;=====================================================
 [bar/main]
-monitor = VGA-0
+monitor = VGA-1
 ; monitor = ${env:MONITOR}
 
 width = 100%
@@ -80,10 +80,12 @@ font-3 = ${fonts.font-3}
 font-4 = ${fonts.font-4}
 font-5 = ${fonts.font-5}
 
-modules-left = i3 lpd wifi ldl
+; modules-left = i3 lpd wifi ldl
 ; modules-right = mpd rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
-; modules-left = i3 lpd eth ldl
-modules-right = spotify rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
+modules-left = i3 lpd eth ldl
+; modules-right = spotify rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
+modules-right = rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
+; modules-right = rld memory rsd cpu rsd volume rsd date
 
 ;=====================================================
 ;   section/base_left_primary
@@ -564,7 +566,7 @@ label-muted = %{T5}%{T-} muted
 [module/updates]
 type = custom/script
 inherit = section/base_right_dark
-exec = cat ~/.local/share/debianupdates
+exec = cat ~/.local/share/updates
 tail = true
 interval = 5
 
