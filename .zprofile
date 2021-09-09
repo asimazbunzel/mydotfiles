@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # defaults
-export TERMINAL="urxvt"
+export TERMINAL="st"
 export EDITOR="nvim"
 export BROWSER="brave"
 export READER="zathura"
@@ -14,7 +14,7 @@ eval "$(/home/asimazbunzel/.local/bin/conda/bin/conda shell.zsh hook)"
 
 
 # add $HOME/.local/bin to $PATH
-export PATH="$PATH:${$(find ~/.local/bin -type d -not -path "*conda*" -printf %p:)%%:}"
+export PATH="$PATH:${$(find ~/.local/bin -type d -not -path "*conda*" -not -path "*st*" -printf %p:)%%:}"
 
 
 # XDG variables
