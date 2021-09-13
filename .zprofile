@@ -14,7 +14,7 @@ eval "$(/home/asimazbunzel/.local/bin/conda/bin/conda shell.zsh hook)"
 
 
 # add $HOME/.local/bin to $PATH
-export PATH="$PATH:${$(find ~/.local/bin -type d -not -path "*conda*" -not -path "*st*" -printf %p:)%%:}"
+export PATH="$PATH:${$(find ~/.local/bin -type d -not -path "*conda*" -not -path "*st*" -not -path "*slack*" -printf %p:)%%:}"
 
 
 # XDG variables
