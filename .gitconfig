@@ -19,3 +19,5 @@
     ck4pull = remote show origin
 [blame]
     date = short
+[init]
+	defaultBranch = main
