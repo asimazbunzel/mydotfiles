@@ -44,6 +44,10 @@ set expandtab
 " Delete with backspace
 set backspace=indent,eol,start
 
+" ## Stuff copied inside vim stored in clipboard
+"set clipboard^=unnamed
+set clipboard+=unnamedplus
+
 " ## Theme & colorscheme
 "set termguicolors  " true colors on terminal
 "set background=dark
