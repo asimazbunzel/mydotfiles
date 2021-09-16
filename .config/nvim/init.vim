@@ -30,8 +30,8 @@ filetype plugin indent on
 
 
 " # GENERAL
-language en_US.UTF-8
-set encoding=UTF-8
+"language en_US.UTF-8
+"set encoding=UTF-8
 set nocompatible                                                    " no need for vi
 set clipboard+=unnamedplus                                          " yank goes to clipboard
 set nowrap
@@ -45,9 +45,9 @@ set incsearch
 set fdm=marker
 set magic                                                           " for regex 
 set whichwrap+=<,>,h,l
-set spell spl=en_us                                                 "  set Spell
-set spelllang=en,es                                                 " spell checker
-set spell
+"set spell spl=en_us                                                 "  set Spell
+"set spelllang=en,es                                                 " spell checker
+"set spell
 syntax enable
 set omnifunc=syntaxcomplete#Complete
 
