@@ -81,6 +81,7 @@ let mapleader=","
 nnoremap <leader>r :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <leader>R :%s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <esc> :noh<return> <esc>                                   " remove highlighted word from register
+nnoremap S :%s//g<Left><Left>
 
 nmap <silent> <C-q> :NERDTreeToggle<CR>
 nnoremap <silent> <C-s> :NERDTreeFind<CR>
@@ -110,15 +111,15 @@ let fortran_have_tabs = 1
 
 " VIMF90
 "let fortran_leader = ""
-let fortran_linter = 1
+let fortran_linter = 0
 let fortran_dep_install = 3
 
 
 " ULTISNIPPETS
 let g:UltiSnipsEditSplit='vertical'
-"let g:UltiSnipsSnippetsDir="PATH/TO/CUSTOM/SNIPPETS"
-let g:UltiSnips = {}
-let g:UltiSnipsalways_use_first_snippet = 1
+"let g:UltiSnipsSnippetDirectories=["$HOME/.config/nvim/snippets"]
+"let g:UltiSnips = {}
+"let g:UltiSnipsalways_use_first_snippet = 1
 let g:UltiSnipsExpandTrigger="<s-tab>"
 let g:UltiSnipsJumpForwardTrigger="<s-tab>"
 
