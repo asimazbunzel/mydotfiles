@@ -54,6 +54,9 @@ font-1 = "Noto Color Emoji:style=Regular:scale=12;2"
 ; Powerline Glyphs
 font-2 = "Iosevka Nerd Font:style=Medium:size=12;3"
 
+; Smaller icons Fonts
+font-3 = "Noto Color Emoji:style=Regular:scale=15;2"
+
 ;=====================================================
 ;   bar/top
 ;=====================================================
@@ -76,7 +79,7 @@ foreground = ${colors.material-foreground}
 font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
-;font-3 = ${fonts.font-3}
+font-3 = ${fonts.font-3}
 ;font-4 = ${fonts.font-4}
 ;font-5 = ${fonts.font-5}
 ;font-6 = ${fonts.font-6}
@@ -457,16 +460,16 @@ pin-workspaces = false
 format-padding = ${variables.label-padding}
 format-background = ${colors.material-primary}
 
-label-focused = %{T2}🔵%{T-} %{T0}%index%%{T-}
+label-focused = %{T4}🔵%{T-} %{T0}%index%%{T-}
 label-focused-padding = ${variables.label-padding}
 
-label-unfocused = %{T2}⚫%{T-} %index%
+label-unfocused = %{T4}⚫%{T-} %index%
 label-unfocused-padding = ${variables.label-padding}
 
-label-visible = %{T2}⚫%{T-} %index%
+label-visible = %{T4}⚫%{T-} %index%
 label-visible-padding = ${variables.label-padding}
 
-label-urgent = %{T2}🟡%{T-} %index%
+label-urgent = %{T4}🟡%{T-} %index%
 label-urgent-padding = ${variables.label-padding}
 
 ;=====================================================
