@@ -23,7 +23,8 @@
 material-foreground = #dedede
 material-dark-background = #242424
 material-light-background = #333333
-material-primary = #315bef
+;material-primary = #315bef
+material-primary = #1e3687
 material-warn = #fc4138
 
 green = #FFFF00
@@ -33,7 +34,7 @@ yellow = #008000
 ;   variables
 ;=====================================================
 [variables]
-bar-height = 18
+bar-height = 16
 bar-border-size = 0
 
 label-padding = 1
@@ -43,17 +44,15 @@ label-maxlen = 50
 ;   fonts
 ;=====================================================
 [fonts]
+
 ; Text Fonts
-font-0 = Iosevka Nerd Font:style=Medium:size=8;3
+font-0 = Iosevka Nerd Font:style=Medium:size=8;2
+
 ; Icons Fonts
-font-1 = icomoon\-feather:style=Medium:size=9;3
+font-1 = "Noto Color Emoji:style=Regular:scale=12;2"
+
 ; Powerline Glyphs
-font-2 = Iosevka Nerd Font:style=Medium:size=12;3
-; Larger font size for bar fill icons
-font-3 = Iosevka Nerd Font:style=Medium:size=12;3
-; Smaller font size for shorter spaces
-font-4 = Iosevka Nerd Font:style=Medium:size=7;3
-font-5 = Font Awesome 5 Free:size=9:weight=bold:antialias=true;2
+font-2 = "Iosevka Nerd Font:style=Medium:size=12;3"
 
 ;=====================================================
 ;   bar/top
@@ -67,6 +66,7 @@ height = ${variables.bar-height}
 bottom = false
 fixed-center = true
 
+
 border-bottom-size = ${variables.bar-border-size}
 border-color = ${colors.material-dark-background}
 
@@ -76,16 +76,16 @@ foreground = ${colors.material-foreground}
 font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
-font-3 = ${fonts.font-3}
-font-4 = ${fonts.font-4}
-font-5 = ${fonts.font-5}
+;font-3 = ${fonts.font-3}
+;font-4 = ${fonts.font-4}
+;font-5 = ${fonts.font-5}
+;font-6 = ${fonts.font-6}
 
 ; modules-left = i3 lpd wifi ldl
 ; modules-right = mpd rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
 modules-left = i3 lpd eth ldl
 ; modules-right = spotify rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
 modules-right = rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
-; modules-right = rld memory rsd cpu rsd volume rsd date
 
 ;=====================================================
 ;   section/base_left_primary
@@ -457,20 +457,16 @@ pin-workspaces = false
 format-padding = ${variables.label-padding}
 format-background = ${colors.material-primary}
 
-label-focused = %{T4}●%{T-} %index%
-label-focused-font = 2
+label-focused = %{T2}🔵%{T-} %{T0}%index%%{T-}
 label-focused-padding = ${variables.label-padding}
 
-label-unfocused = %{T4}◌%{T-} %index%
-label-unfocused-font = 2
+label-unfocused = %{T2}⚫%{T-} %index%
 label-unfocused-padding = ${variables.label-padding}
 
-label-visible = %{T4}○%{T-} %index%
-label-visible-font = 2
+label-visible = %{T2}⚫%{T-} %index%
 label-visible-padding = ${variables.label-padding}
 
-label-urgent = %{T4}◎%{T-} %index%
-label-urgent-font = 2
+label-urgent = %{T2}🟡%{T-} %index%
 label-urgent-padding = ${variables.label-padding}
 
 ;=====================================================
@@ -481,7 +477,7 @@ type = internal/cpu
 inherit = section/base_right_dark
 interval = 0.5
 
-label = %{F#c0ca33}%{T5}%{T-} %percentage-cores:3%%{F-}
+label = %{F#c0ca33}%{T2}🖥️%{T-} %percentage-cores:3%%{F-}
 
 ;=====================================================
 ;   module/memory
@@ -491,7 +487,7 @@ type = internal/memory
 inherit = section/base_right_dark
 interval = 1
 
-label = "%{F#7cb342}%{T5}%{T-} RAM: %gb_used%/%gb_total%%{F-}"
+label = "%{F#7cb342}%{T2}%{T-} RAM: %gb_used%/%gb_total%%{F-}"
 
 ;=====================================================
 ;   module/wifi
@@ -521,7 +517,8 @@ inherit = section/base_left_dark
 
 interface = enp6s0
 
-label-connected = "%{F#fdd835}%{T1}%{T-} %upspeed:8% %{F-} %{T3}%{T-} %{F#43a047}%{T1}%{T-} %downspeed:8%%{F-}"
+;label-connected = "%{F#fdd835}%{T1}%{T-} %upspeed:8% %{F-} %{T3}%{T-} %{F#43a047}%{T1}%{T-} %downspeed:8%%{F-}"
+label-connected = "%{T2}📤%{T-} %{F#fdd835}%upspeed:8%%{F-}  %{T2}%{T-} %{T2}📥%{T-} %{F#43a047}%downspeed:8%%{F-}"
 label-disconnected = "not connected"
 
 ;=====================================================
@@ -545,8 +542,11 @@ interval = 1
 ;date = %a %d.%m
 ;label = %{T5}%{T-} %{T2}%date%%{T-}
 
-time = %{T5}%{T-} %I:%M %p
-time-alt = " %{T2}%a %d.%m%{T-}"
+;format-prefix = 
+;format-prefix-font = 6
+
+time = %{T2}🕓%{T-} %I:%M %p
+time-alt = "%{T2}📅%{T-} %a %d.%m"
 label = %time%
 
 ;=====================================================
@@ -557,8 +557,8 @@ type = internal/alsa
 inherit = section/base_right_dark
 interval = 1
 
-label-volume = %{F#fb8c00}%{T5}%{T-} %percentage:3%%%{F-}
-label-muted = %{T5}%{T-} muted
+label-volume = %{T2}🔊%{T-} %{F#fb8c00}%percentage:3%%%{F-}
+label-muted = %{T2}🔇%{T-} muted
 
 ;=====================================================
 ;   module/updates
