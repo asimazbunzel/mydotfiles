@@ -32,8 +32,9 @@ export LESS=-R
 
 # interactive python bindings (see docs in ~/.config/python/python-startup)
 # export PYTHONSTARTUP="$HOME/.config/python/python-startup.py"
+
 # add locations to PYTHONPATH for my MESA tools
-# export PYTHONPATH="$HOME/.mesa_tools"
+export PYTHONPATH="$HOME/.local/bin"
 
 # shortcuts
 [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc ] || [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/mesarc ] && shortcuts 2>&1 &
