@@ -8,3 +8,12 @@
 **/mpd/log
 **/mpd/pid
 **/mpd/state
+
+# nvim own plugins
+**/nvim/autoload/
+**/nvim/ftdetect
+**/nvim/ftplugin
+**/nvim/syntax
+
+# zsh dump
+**/zsh/.zcompdump*
