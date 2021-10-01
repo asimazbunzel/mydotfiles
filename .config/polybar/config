@@ -61,7 +61,7 @@ font-3 = "Noto Color Emoji:style=Regular:scale=15;2"
 ;   bar/top
 ;=====================================================
 [bar/main]
-monitor = VGA-1
+; monitor = VGA-1
 ; monitor = ${env:MONITOR}
 
 width = 100%
