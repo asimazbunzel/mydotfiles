@@ -35,3 +35,6 @@ chsh -s $(which zsh)
 # install neovim and symlink config
 
 # install conda in .local/bin and install pynvim using conda install -c conda-forge pynvim
+
+# create symlink for conky and to be able to use symbols, install:
+# https://forums.linuxmint.com/viewtopic.php?t=321091
