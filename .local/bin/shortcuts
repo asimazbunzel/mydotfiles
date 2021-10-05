@@ -1,0 +1,24 @@
+#!/bin/sh
+
+bmdirs="${XDG_CONFIG_HOME:-$HOME/.config}/directories"
+bmfiles="${XDG_CONFIG_HOME:-$HOME/.config}/bmfiles"
+
+mesadirs="${XDG_CONFIG_HOME:-$HOME/.config}/mesadirs"
+
+shell_shortcuts="${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
+
+printf "# vim: filetype=sh\\nalias " > "$shell_shortcuts"
+
+# Format the `directories` file in the correct syntax and sent it to all three configs.
+eval "echo \"$(cat "$mesadirs")\"" | \
+awk "!/^\s*#/ && !/^\s*\$/ {gsub(\"\\\s*#.*$\",\"\");
+	printf(\"%s=\42cd %s && ls -a\42 \\\\\n\",\$1,\$2)   >> \"$shell_shortcuts\" }"
+
+eval "echo \"$(cat "$bmdirs")\"" | \
+awk "!/^\s*#/ && !/^\s*\$/ {gsub(\"\\\s*#.*$\",\"\");
+	printf(\"%s=\42cd %s && ls -a\42 \\\\\n\",\$1,\$2)   >> \"$shell_shortcuts\" }"
+
+# Format the `files` file in the correct syntax and sent it to both configs.
+eval "echo \"$(cat "$bmfiles")\"" | \
+awk "!/^\s*#/ && !/^\s*\$/ {gsub(\"\\\s*#.*$\",\"\");
+	printf(\"%s=\42\$EDITOR %s\42 \\\\\n\",\$1,\$2)  >> \"$shell_shortcuts\" }"
