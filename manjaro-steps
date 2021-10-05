@@ -1,0 +1,37 @@
+# STEP BY STEP to setup my Manjaro Linux install
+
+# clone dotfiles to ~/Documents/dotfiles (because I like that place)
+
+# change shell to zsh
+chsh -s $(which zsh)
+
+# install luke's smith fork of ST (https://github.com/LukeSmithxyz/st)
+# I will install it in ~/.local/bin, but maybe /opt should be better ?
+
+# make symlink for dotfiles to respective places ($HOME and $HOME/.config)
+# start with .gitconfig, .zprofile and .config/zsh. If .config/zsh is not sourced, 
+# create $HOME/.zshenv and put "ZDOTDIR=$HOME/.config/zsh". This should fix it 
+
+# install oh-my-zsh, then p10k (remember to install MesloLGS fonts in
+# ~/.local/share/fonts)
+
+# symlink .Xresources to $HOME (delete existing file)
+
+# change st config.h to have a nicer cursor shape in line 158
+
+# install polybar (yay -S polybar) & symlink polybar/config to .config/polybar
+# install fonts: (yay -S ttf-iosevka) (https://github.com/googlefonts/noto-emoji)
+# install libxft-bgra from the AUR: yay -S libxft-bgra to solve issues with emojis
+
+# remove i3 config from ~/.i3 and symlink to .config/i3
+# copy scripts to .local/bin/polybar for weather and updates
+# to solve issue with powerlines, download Iosevka nerd font from this link:
+# https://www.nerdfonts.com/font-downloads
+
+# solve issue with oh-my-zsh plugin: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+
+# create also the script shortcutsrc and make it work with magic
+
+# install neovim and symlink config
+
+# install conda in .local/bin and install pynvim using conda install -c conda-forge pynvim
