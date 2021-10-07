@@ -36,5 +36,5 @@ export LESS=-R
 export PYTHONPATH="$HOME/.local/bin"
 
 # shortcuts
-[ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc ] || [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/mesarc ] && shortcuts 2>&1 &
-[ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/dirsrc ] || [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc ] && shortcuts 2>&1 &
+[ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc ] || [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/mesarc ] && shortcuts >/dev/null 2>&1 &
+[ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/dirsrc ] || [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc ] && shortcuts >/dev/null 2>&1 &
