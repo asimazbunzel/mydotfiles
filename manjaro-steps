@@ -1,5 +1,9 @@
 # STEP BY STEP to setup my Manjaro Linux install
 
+# sometimes, lightdm does not work, i dont know why
+# to solve this, set logind-check-graphical=true in
+# /etc/lightdm/lightdm.conf
+
 # clone dotfiles to ~/Documents/dotfiles (because I like that place)
 
 # change shell to zsh
