@@ -23,10 +23,3 @@ alias df="df -h" \
    nano="nano -Sl"
 
 alias plotdig="java -Xmx128m -jar $HOME/.local/bin/plot_digitizer/PlotDigitizer.jar 2>/dev/null"
-
-function cp_to_xrays () {
-    scp -r $1 xrays:$2
-}
-function cp_to_xmm () {
-        scp -r $1 xmm-newton:$2
-}
