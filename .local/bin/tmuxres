@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# open tmux and automatically run tmux-resurrect
+
+# from https://github.com/tmux-plugins/tmux-resurrect/issues/139
+
+TMUX_DIR=$HOME/.tmux
+
+pgrep -vx tmux > /dev/null && \
+   tmux new -d -s delete-me && \
+   tmux run-shell $TMUX_DIR/plugins/tmux-resurrect/scripts/restore.sh && \
+   tmux kill-session -t delete-me && \
+   tmux attach || tmux attach
