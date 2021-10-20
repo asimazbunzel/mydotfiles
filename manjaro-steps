@@ -1,5 +1,13 @@
 # STEP BY STEP to setup my Manjaro Linux install
 
+# in my Thinkpad T14, I have dual boot with Windows.
+# # to make both work, I followed https://forum.manjaro.org/t/the-installer-fails-to-use-the-selected-efi-partition/80438
+
+# also, my soundcard was not recognized. i solved it by installing the correct firmware needed
+# which i found with the command inxi -Fx
+
+# lastly, bluetooth issue was solved by installing pulseaudio-bluetooth
+
 # sometimes, lightdm does not work, i dont know why
 # to solve this, set logind-check-graphical=true in
 # /etc/lightdm/lightdm.conf
