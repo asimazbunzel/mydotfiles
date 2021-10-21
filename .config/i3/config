@@ -15,9 +15,13 @@ default_floating_border normal
 hide_edge_borders none
 
 # change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
+#bindsym $mod+u border none
+bindsym $mod+u border pixel 1
 bindsym $mod+n border normal
+
+# toggle fullscreen on youtube video first, then run this and voilà
+# see: https://www.reddit.com/r/i3wm/comments/4a66pv/youtube_floater_play_youtube_videos_in_a_floating/
+bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 1415 20
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -56,8 +60,10 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 ################################################################################################
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+#bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+#bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
