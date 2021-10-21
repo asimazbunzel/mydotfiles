@@ -86,9 +86,9 @@ font-3 = ${fonts.font-3}
 
 ; modules-left = i3 lpd wifi ldl
 ; modules-right = mpd rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
-modules-left = i3 lpd eth ldl
+modules-left = i3 lpd wifi ldl
 ; modules-right = spotify rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
-modules-right = rld memory rsd cpu rsd volume rsd updates rdp date rsp weather
+modules-right = rld memory rsd cpu rsd battery rsd volume rsd updates rdp date rsp weather
 
 ;=====================================================
 ;   section/base_left_primary
@@ -503,10 +503,12 @@ inherit = section/base_left_dark
 ;accumulate-stats = true
 
 ; Get interface with "ip link | awk '/state UP/ {print $2}')""
-interface = wlxf4ec388e8b6d
+interface = wlp0s20f3
 
-label-connected = "%{F#fdd835}%{T1}%{T-} %upspeed:8% %{F-} %{T3}%{T-} %{F#43a047}%{T1}%{T-} %downspeed:8%%{F-}"
-label-disconnected = " not connected"
+;label-connected = "%{F#fdd835}%{T1}%{T-} %upspeed:8% %{F-} %{T3}%{T-} %{F#43a047}%{T1}%{T-} %downspeed:8%%{F-}"
+;label-disconnected = " not connected"
+label-connected = "%{T2}📤%{T-} %{F#fdd835}%upspeed:8%%{F-}  %{T2}%{T-} %{T2}📥%{T-} %{F#43a047}%downspeed:8%%{F-}"
+label-disconnected = "not connected"
 
 ;=====================================================
 ;   module/eth
@@ -634,13 +636,13 @@ adapter = AC
 full-at = 95
 
 format-charging = <label-charging>
-label-charging = %{T5}%{T-} %percentage:3%%
+label-charging = %{T2}🔌%{T-} %{F#fb8c00}%percentage:3%%%{F-}
 
 format-discharging = <label-discharging>
-label-discharging = %{T5}%{T-} %percentage:3%%
+label-discharging = %{T2}🔋%{T-} %{F#fb8c00}%percentage:3%%%{F-}
 
 format-full = <label-full>
-label-full = %{T5}%{T-} %percentage:3%%
+label-full = %{T2}⚡%{T-} %{F#fb8c00}%percentage:3%%%{F-}
 
 ;=====================================================
 ;   module/temperature
