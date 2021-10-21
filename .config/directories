@@ -1,7 +1,6 @@
 dw $HOME/Downloads
 docs $HOME/Documents
-github $HOME/Documents/github
-dots $HOME/Documents/github/dotfiles
+dots $HOME/Documents/dotfiles
 pa $HOME/Documents/papers
 bo $HOME/Documents/books
 pres $HOME/Documents/presentations
