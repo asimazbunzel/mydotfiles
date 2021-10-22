@@ -63,7 +63,15 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 #bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
-bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+# solve issues with mute/unmute from this post:
+# https://askubuntu.com/questions/65764/how-do-i-toggle-sound-with-amixer
+#bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id volcontrol --up
+bindsym XF86AudioLowerVolume exec --no-startup-id volcontrol --down
+bindsym XF86AudioMute exec --no-startup-id volcontrol --togmute
+
+bindsym XF86AudioMicMute exec --no-startup-id togglemic
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
