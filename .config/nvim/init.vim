@@ -25,6 +25,8 @@ Plug 'ap/vim-css-color'                                             " color prev
 Plug 'davidhalter/jedi-vim'                                         " autocomplete for python. need neovim module in python to work
 Plug 'rudrab/vimf90'                                                " fotran ide-like
 Plug 'SirVer/ultisnips'                                             " snippets in combination with vimf90
+Plug 'lervag/vimtex'                                                " LaTeX support
+Plug 'KeitaNakamura/tex-conceal.vim'                                " concealment for LaTeX
 call plug#end()
 filetype plugin indent on
 
@@ -117,11 +119,12 @@ let fortran_dep_install = 3
 
 " ULTISNIPPETS
 let g:UltiSnipsEditSplit='vertical'
-"let g:UltiSnipsSnippetDirectories=["$HOME/.config/nvim/snippets"]
+let g:UltiSnipsSnippetDirectories=["ultisnips", "custom_snippets"]
 "let g:UltiSnips = {}
 "let g:UltiSnipsalways_use_first_snippet = 1
-let g:UltiSnipsExpandTrigger="<s-tab>"
-let g:UltiSnipsJumpForwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 
 " # AIRLINE
@@ -153,3 +156,19 @@ let g:NERDTreeIgnore = [
     \ '\.pyc$', '^__pycache__$', '^venv$',
     \ '^tags$', 'node_modules', '\.o$'
     \]
+
+
+" # VIMTEX
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+
+
+" # TEX-CONCEAL
+set conceallevel=1
+let g:tex_conceal='abdmg'
+hi Conceal ctermbg=none
+
+setlocal spell
+"set spelllang=en_us
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
