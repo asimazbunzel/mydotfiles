@@ -1,0 +1,10 @@
+#/bin/sh
+
+# search for active mic source
+active_source=$(pacmd list-sources | awk '/* index:/{print $3}')
+
+# find status (muted/unmuted)
+status=$(pacmd list-sources | grep -A 15 'index: '${active_source}'' | awk '/muted/{print $2}')
+
+# toggle depending on status
+[[ $status == 'no' ]] && pactl set-source-mute ${active_source} 1 || pactl set-source-mute ${active_source} 0
