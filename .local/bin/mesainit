@@ -1,0 +1,30 @@
+#!/bin/sh
+
+mesainit () {
+
+   case $1 in
+
+      r15140)
+         export MESA_DIR=~/Developmets/mesa-r15140
+         export MESASDK_ROOT=~/Developments/mesasdk-20.12.1
+         export MESA_CACHES_DIR=~/.caches/mesa-r15140
+         source $MESASDK_ROOT/bin/mesasdk_init.sh
+         ;;
+
+      *)
+         echo "unknown MESA_DIR"
+         ;;
+
+      esac
+}
+
+_mesainit() {
+   compadd r15140
+}
+
+
+# if not defined here, compdef will not be found
+autoload -Uz compinit
+compinit
+
+compdef _mesainit mesainit

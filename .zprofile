@@ -7,11 +7,9 @@ export BROWSER="brave"
 export READER="zathura"
 export PAGER="less"
 export FILE="ranger"
-# export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 
 # miniconda
-eval "$(/home/asimazbunzel/.local/bin/conda/bin/conda shell.zsh hook)"
-
+[ -d $HOME/.local/bin/conda ] && eval "$(/home/asimazbunzel/.local/bin/conda/bin/conda shell.zsh hook)"
 
 # add $HOME/.local/bin to $PATH
 export PATH="$PATH:${$(find ~/.local/bin -type d -not -path "*conda*" -not -path "*st*" -not -path "*slack*" -printf %p:)%%:}"
@@ -38,3 +36,6 @@ export PYTHONPATH="$HOME/.local/bin"
 # shortcuts
 [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc ] && shortcuts >/dev/null 2>&1 &
 [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc ] && shortcuts >/dev/null 2>&1 &
+
+# mesainit
+[ -f $HOME/.local/bin/mesainit ] && source $HOME/.local/bin/mesainit
