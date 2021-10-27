@@ -130,6 +130,8 @@ format-foreground = ${colors.material-foreground}
 format-background = ${colors.material-dark-background}
 format-connected-foreground = ${colors.material-foreground}
 format-connected-background = ${colors.material-dark-background}
+format-disconnected-foreground = ${colors.material-foreground}
+format-disconnected-background = ${colors.material-dark-background}
 format-warn-foreground = ${colors.material-foreground}
 format-warn-background = ${colors.material-dark-background}
 format-volume-foreground = ${colors.material-foreground}
@@ -508,7 +510,7 @@ interface = wlp0s20f3
 ;label-connected = "%{F#fdd835}%{T1}%{T-} %upspeed:8% %{F-} %{T3}%{T-} %{F#43a047}%{T1}%{T-} %downspeed:8%%{F-}"
 ;label-disconnected = " not connected"
 label-connected = "%{T2}📤%{T-} %{F#fdd835}%upspeed:8%%{F-}  %{T2}%{T-} %{T2}📥%{T-} %{F#43a047}%downspeed:8%%{F-}"
-label-disconnected = "not connected"
+label-disconnected = "%{F#fc4138} wifi not connected %{F-}"
 
 ;=====================================================
 ;   module/eth
