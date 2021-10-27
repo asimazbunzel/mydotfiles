@@ -8,6 +8,8 @@ export READER="zathura"
 export PAGER="less"
 export FILE="ranger"
 
+export LOCATION="la-plata"
+
 # miniconda
 [ -d $HOME/.local/bin/conda ] && eval "$(/home/asimazbunzel/.local/bin/conda/bin/conda shell.zsh hook)"
 
@@ -39,3 +41,6 @@ export PYTHONPATH="$HOME/.local/bin"
 
 # mesainit
 [ -f $HOME/.local/bin/mesainit ] && source $HOME/.local/bin/mesainit
+
+# functions for computing compositional changes of a star
+[ -f $HOME/.local/bin/mesa/eval_metals ] && source $HOME/.local/bin/mesa/eval_metals
