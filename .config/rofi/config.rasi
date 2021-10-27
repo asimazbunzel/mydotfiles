@@ -124,9 +124,9 @@
     text-color: @drac-cya;
 }
 #prompt {
-    enabled: false;
-    //spacing:    0;
-    //text-color: @drac-grn;
+    //enabled: false;
+    spacing:    0;
+    text-color: @drac-grn;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];

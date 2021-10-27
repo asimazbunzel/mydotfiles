@@ -34,6 +34,8 @@ floating_modifier $mod
 bindsym $mod+Return exec st
 bindsym $mod+Shift+Return exec --no-startup-id samedir
 
+bindsym $mod+Shift+p exec openproject
+
 # start tmux
 bindsym $mod+Shift+t exec st -e tmuxres
 
