@@ -1,0 +1,15 @@
+#!/bin/sh
+
+name=$(ls $HOME/Projects | rofi -show -dmenu -p "project")
+
+[ -z $name ] && exit 1
+
+tmux has-session -t "$name" 2>/dev/null
+
+if [ $? != 0 ]
+then
+   st -e tmux new-session -d -s "$name"
+   st -e tmux send-keys -t "$name".0 "cd $HOME/Projects/$name && ls -a" ENTER
+fi
+
+exec st -e tmux attach -t "$name"
