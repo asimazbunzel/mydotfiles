@@ -35,6 +35,7 @@ bindsym $mod+Return exec st
 bindsym $mod+Shift+Return exec --no-startup-id samedir
 
 bindsym $mod+Shift+p exec openproject
+bindsym $mod+Shift+d exec opendev
 
 # start tmux
 bindsym $mod+Shift+t exec st -e tmuxres
@@ -84,7 +85,7 @@ bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
 # bindsym $mod+t exec --no-startup-id pkill picom
 # bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
