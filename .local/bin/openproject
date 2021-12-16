@@ -8,8 +8,10 @@ tmux has-session -t "$name" 2>/dev/null
 
 if [ $? != 0 ]
 then
-   st -e tmux new-session -d -s "$name"
+   st -e tmux new-session -d -s "$name" -n src
    st -e tmux send-keys -t "$name".0 "cd $HOME/Projects/$name && ls -a" ENTER
+   st -e tmux new-window -t "$name":1 -n run 
+   st -e tmux send-keys -t "$name":1 "cd $HOME/Projects/$name && ls -a" ENTER
 fi
 
 exec st -e tmux attach -t "$name"
