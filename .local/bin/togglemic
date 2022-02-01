@@ -7,4 +7,10 @@ active_source=$(pacmd list-sources | awk '/* index:/{print $3}')
 status=$(pacmd list-sources | grep -A 15 'index: '${active_source}'' | awk '/muted/{print $2}')
 
 # toggle depending on status
-[[ $status == 'no' ]] && pactl set-source-mute ${active_source} 1 || pactl set-source-mute ${active_source} 0
+if [[ $status == 'no' ]]; then
+   pactl set-source-mute ${active_source} 1
+   notify-send -t 500 "Microphone Manager" "Status: 🚫 muted"
+else
+   pactl set-source-mute ${active_source} 0
+   notify-send -t 500 "Microphone Manager" "Status: 🎤 unmuted"
+fi
