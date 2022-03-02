@@ -38,6 +38,9 @@ HISTFILE=~/.cache/zsh/history
 # Load mesainit to activate mesa
 [ -f "$HOME/.local/bin/mesainit" ] && source "$HOME/.local/bin/mesainit"
 
+# Load compasinit to activate compas
+[ -f "$HOME/.local/bin/compasinit" ] && source "$HOME/.local/bin/compasinit"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
