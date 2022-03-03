@@ -215,6 +215,7 @@ assign [title="PGPLOT"] $ws7
 assign [class="Slack"] $ws5
 
 # Open specific applications in floating mode
+for_window [class="NoiseTorch"] floating enable border pixel 1
 for_window [class="Steam"] floating enable border pixel 1
 for_window [title="PGPLOT"] floating enable
 for_window [title="PGPLOT"] resize set 90 ppt 95 ppt, resize shrink down 20 px, move position center move
