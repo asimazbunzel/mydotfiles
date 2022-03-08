@@ -30,37 +30,20 @@ font xft:URWGothic-Book 9
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec st
-bindsym $mod+Shift+Return exec --no-startup-id samedir
-
-bindsym $mod+Shift+p exec openproject
-bindsym $mod+Shift+d exec opendev
-
-# start tmux
-bindsym $mod+Shift+t exec st -e tmuxres
-
-# kill focused window
-bindsym $mod+q kill
-bindsym $mod+Shift+q kill
-
-# start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
-
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
-
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym $mod+Ctrl+m exec st -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
+
+# noisetorch mic config
+exec --no-startup-id noisetorch
 
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -77,20 +60,44 @@ bindsym XF86AudioMute exec --no-startup-id volcontrol --togmute
 bindsym XF86AudioMicMute exec --no-startup-id togglemic
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+Ctrl+b exec st -e 'bmenu'
+bindsym $mod+Shift+m exec st -e 'ranger'
+bindsym $mod+F5 exec st -e 'mocp'
+
 bindsym $mod+Shift+w exec brave
+bindsym $mod+Shift+s exec slack
+bindsym $mod+Shift+t exec telegram-desktop
 bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec terminal -e 'mocp'
-# bindsym $mod+t exec --no-startup-id pkill picom
-# bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+
+# screenshot
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
+# open help
 bindsym $mod+F1 exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+
+# kill app
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
+# start a terminal
+bindsym $mod+Return exec st
+bindsym $mod+Shift+Return exec --no-startup-id samedir
+
+# tmux with project/dev
+bindsym $mod+Shift+p exec openproject
+bindsym $mod+Shift+d exec opendev
+
+# kill focused window
+bindsym $mod+q kill
+bindsym $mod+Shift+q kill
+
+# start program launcher
+bindsym $mod+d exec --no-startup-id dmenu_recency
+
+# launch categorized menu
+bindsym $mod+z exec --no-startup-id morc_menu
 
 # focus_follows_mouse no
 
@@ -143,7 +150,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # toggle sticky
-bindsym $mod+Shift+s sticky toggle
+bindsym $mod+s sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -202,9 +209,6 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# slack config
-bindsym $mod+s exec --no-startup-id slack
-
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
 # assign [class="Pale moon"] $ws2
@@ -213,6 +217,7 @@ bindsym $mod+s exec --no-startup-id slack
 assign [class="Brave-browser"] $ws8
 assign [title="PGPLOT"] $ws7
 assign [class="Slack"] $ws5
+assign [class="Telegram"] $ws4
 
 # Open specific applications in floating mode
 for_window [class="NoiseTorch"] floating enable border pixel 1
@@ -319,8 +324,6 @@ exec --no-startup-id /home/asimazbunzel/.config/conky/conkyx-start.sh
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-
-exec --no-startup-id noisetorch
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
