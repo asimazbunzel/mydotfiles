@@ -20,6 +20,7 @@ alias df="df -h" \
    grep="grep --color=auto" \
    ssh="ssh -X" \
    ipython="ipython --no-confirm-exit" \
-   nano="nano -Sl"
+   nano="nano -Sl" \
+   bat="bat --wrap=never"
 
 alias plotdig="java -Xmx128m -jar $HOME/.local/bin/plot_digitizer/PlotDigitizer.jar 2>/dev/null"
