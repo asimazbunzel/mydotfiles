@@ -45,6 +45,9 @@ bindsym $mod+Ctrl+m exec st -e 'alsamixer'
 # noisetorch mic config
 exec --no-startup-id noisetorch
 
+# keyboard layout config
+exec --no-startup-id "setxkbmap -model pc105 -layout es,us -variant ,altgr-intl -option 'grp:alt_shift_toggle'"
+
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 #bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
