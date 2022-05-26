@@ -46,7 +46,7 @@ bindsym $mod+Ctrl+m exec st -e 'alsamixer'
 exec --no-startup-id noisetorch
 
 # keyboard layout config
-exec --no-startup-id "setxkbmap -model pc105 -layout latam,us -variant ,altgr-intl -option 'grp:alt_shift_toggle'"
+exec --no-startup-id "setxkbmap -model pc105 -layout latam,us -variant ,altgr-intl -option 'grp:ctrl_alt_toggle'"
 
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -67,6 +67,7 @@ bindsym $mod+Ctrl+b exec st -e 'bmenu'
 bindsym $mod+Shift+m exec st -e 'ranger'
 bindsym $mod+F5 exec st -e 'mocp'
 
+bindsym $mod+Shift+a exec /home/asimazbunzel/.local/bin/Discord/Discord
 bindsym $mod+Shift+w exec brave
 bindsym $mod+Shift+s exec slack
 bindsym $mod+Shift+t exec telegram-desktop
