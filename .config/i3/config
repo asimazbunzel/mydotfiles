@@ -47,7 +47,7 @@ bindsym $mod+Ctrl+m exec st -e 'alsamixer'
 exec --no-startup-id noisetorch
 
 # keyboard layout config
-exec --no-startup-id "setxkbmap -model pc105 -layout latam,us -variant ,altgr-intl -option 'grp:ctrl_alt_toggle'"
+exec --no-startup-id setxkbmap -model pc105 -layout latam,us -variant ,altgr-intl -option 'grp:ctrl_alt_toggle'
 
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -224,6 +224,7 @@ assign [title="PGPLOT"] $ws7
 assign [class="Slack"] $ws5
 assign [class="Telegram"] $ws4
 assign [class="discord"] $ws4
+assign [class="zoom"] $ws4
 
 # Open specific applications in floating mode
 for_window [class="NoiseTorch"] floating enable border pixel 1
@@ -256,7 +257,9 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
+for_window [class="Xfburn"] floating enable sticky enable border normal
+for_window [class="Blueman-manager"] floating enable, resize set 500 600, sticky enable, move position center move
+for_window [class="zoom"] floating enable, resize set 1000 700, sticky enable, move position center move
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -322,7 +325,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
+exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
