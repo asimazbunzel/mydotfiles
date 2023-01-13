@@ -12,7 +12,7 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 
-st.font: Monospace-7.5;
+st.font: Monospace-9;
 *.alpha: 0.98
 
 
