@@ -31,7 +31,7 @@ XTerm*selectToClipboard: true
 
 ! special
 *.foreground:  #93a1a1
-*.background:  #141c21
+*.background:  #0e0e0e
 *.cursorColor: #afbfbf
 
 ! black
