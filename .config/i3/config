@@ -43,8 +43,8 @@ bindsym $mod+Ctrl+m exec st -e 'alsamixer'
 
 ################################################################################################
 
-# noisetorch mic config
-exec --no-startup-id noisetorch
+# auto handle plug-and-play monitors
+exec --no-startup-id mons -a > /dev/null 2>&1
 
 # keyboard layout config
 exec --no-startup-id setxkbmap -model pc105 -layout latam,us -variant ,altgr-intl -option 'grp:ctrl_alt_toggle'
