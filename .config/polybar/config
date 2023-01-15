@@ -20,10 +20,11 @@
 ;   colors
 ;=====================================================
 [colors]
-material-foreground = #dedede
-material-dark-background = #242424
+material-foreground = #FFFFFF
+material-dark-background = #1F1F1F
+;material-foreground = #dedede
+;material-dark-background = #242424
 material-light-background = #333333
-;material-primary = #315bef
 material-primary = #1e3687
 material-warn = #fc4138
 
@@ -34,7 +35,7 @@ yellow = #008000
 ;   variables
 ;=====================================================
 [variables]
-bar-height = 16
+bar-height = 22
 bar-border-size = 0
 
 label-padding = 1
@@ -46,16 +47,17 @@ label-maxlen = 50
 [fonts]
 
 ; Text Fonts
-font-0 = Iosevka Nerd Font:style=Medium:size=8;2
+;font-0 = Iosevka Nerd Font:style=Medium:size=9;2
+font-0 = Roboto:style=Regular:size=9;2
 
 ; Icons Fonts
 font-1 = "Noto Color Emoji:style=Regular:scale=12;2"
 
 ; Powerline Glyphs
-font-2 = "Iosevka Nerd Font:style=Medium:size=12;3"
+font-2 = "Iosevka Nerd Font:style=Medium:size=20;5"
 
 ; Smaller icons Fonts
-font-3 = "Noto Color Emoji:style=Regular:scale=15;2"
+font-3 = "Noto Color Emoji:style=Regular:scale=18;1"
 
 ;=====================================================
 ;   bar/top
@@ -69,10 +71,12 @@ height = ${variables.bar-height}
 bottom = false
 fixed-center = true
 
+padding-left = 4
+
 border-bottom-size = ${variables.bar-border-size}
 border-color = ${colors.material-dark-background}
 
-background = ${colors.material-light-background}
+background = ${colors.material-dark-background}
 foreground = ${colors.material-foreground}
 
 font-0 = ${fonts.font-0}
@@ -83,13 +87,18 @@ font-3 = ${fonts.font-3}
 ;font-5 = ${fonts.font-5}
 ;font-6 = ${fonts.font-6}
 
-modules-left = i3 lpd wifi ldl
-modules-right = rld memory rsd cpu rsd battery rsd volume rsd updates rdp date rsp weather
+modules-left = i3
+modules-right = memory cpu battery weather date
+;modules-left = i3 lpd wifi ldl
+;modules-right = rld memory rsd cpu rsd battery rdp weather rsp date
+
+module-margin-left = 2
+module-margin-right = 2
 
 tray-position = right
-;tray-background = ${colors.material-foreground}
-;tray-foreground =
 tray-padding = 5
+tray-foreground = ${colors.material-foreground}
+tray-background = ${colors.material-dark-background}
 
 ;=====================================================
 ;   section/base_left_primary
@@ -460,13 +469,13 @@ wrapping-scroll = true
 strip-wsnumbers = true
 pin-workspaces = false
 
-format-padding = ${variables.label-padding}
-format-background = ${colors.material-primary}
+;format-padding = ${variables.label-padding}
+;format-background = ${colors.material-primary}
 
-label-focused = %{T4}🔵%{T-} %{T0}%index%%{T-}
+label-focused = %{T4}⚪%{T-} %index%
 label-focused-padding = ${variables.label-padding}
 
-label-unfocused = %{T4}⚫%{T-} %index%
+label-unfocused = %{T4}🟣%{T-} %index%
 label-unfocused-padding = ${variables.label-padding}
 
 label-visible = %{T4}⚫%{T-} %index%
@@ -483,7 +492,8 @@ type = internal/cpu
 inherit = section/base_right_dark
 interval = 0.5
 
-label = %{F#c0ca33}%{T2}🖥️%{T-} %percentage-cores:3%%{F-}
+label = %{T2}🖥️%{T-} %percentage-cores:3%
+;label = %{F#c0ca33}%{T2}🖥️%{T-} %percentage-cores:3%%{F-}
 
 ;=====================================================
 ;   module/memory
@@ -493,7 +503,8 @@ type = internal/memory
 inherit = section/base_right_dark
 interval = 1
 
-label = "%{F#7cb342}%{T2}%{T-} RAM: %gb_used%/%gb_total%%{F-}"
+label = %{T3}🛢%{T-} %gb_used%/%gb_total%
+;label = "%{F#7cb342}%{T3}🛢%{T-} RAM: %gb_used%/%gb_total%%{F-}"
 
 ;=====================================================
 ;   module/wifi
@@ -545,7 +556,8 @@ label = %{T6}%{T-} %{T2}%time%%{T-}
 ;=====================================================
 [module/date]
 type = internal/date
-inherit = section/base_right_primary
+inherit = section/base_right_dark
+;inherit = section/base_right_primary
 interval = 1
 ;date = %a %d.%m
 ;label = %{T5}%{T-} %{T2}%date%%{T-}
@@ -553,8 +565,9 @@ interval = 1
 ;format-prefix = 
 ;format-prefix-font = 6
 
-time = %{T2}🕓%{T-} %I:%M %p
-time-alt = "%{T2}📅%{T-} %a %d.%m"
+time = %{T2}🕓%{T-} %I:%M %p %a %d.%m
+;time = %{T2}🕓%{T-} %I:%M %p
+;time-alt = "%{T2}📅%{T-} %a %d.%m"
 label = %time%
 
 ;=====================================================
@@ -585,7 +598,8 @@ label = %{F#e53935}%output%%{F-}
 ;=====================================================
 [module/weather]
 type = custom/script
-inherit = section/base_right_primary
+inherit = section/base_right_dark
+;inherit = section/base_right_primary
 exec = ~/.local/bin/polybar/weather
 tail = true
 interval = 5
@@ -639,13 +653,16 @@ adapter = AC
 full-at = 95
 
 format-charging = <label-charging>
-label-charging = %{T2}🔌%{T-} %{F#fb8c00}%percentage:3%%%{F-}
+label-charging = %{T2}🔌%{T-} %percentage:3%%
+;label-charging = %{T2}🔌%{T-} %{F#fb8c00}%percentage:3%%%{F-}
 
 format-discharging = <label-discharging>
-label-discharging = %{T2}🔋%{T-} %{F#fb8c00}%percentage:3%%%{F-}
+label-discharging = %{T2}🔋%{T-} %percentage:3%%
+;label-discharging = %{T2}🔋%{T-} %{F#fb8c00}%percentage:3%%%{F-}
 
 format-full = <label-full>
-label-full = %{T2}⚡%{T-} %{F#fb8c00}%percentage:3%%%{F-}
+label-full = %{T2}⚡%{T-} %percentage:3%%
+;label-full = %{T2}⚡%{T-} %{F#fb8c00}%percentage:3%%%{F-}
 
 ;=====================================================
 ;   module/temperature
