@@ -1,32 +1,22 @@
-# Adds ~/.scripts and all subdirectories to $PATH
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$PATH:$HOME/.mesa_tools"  # MESA scripts frequently used
-export PATH="/opt/anaconda3/bin:$PATH" # Anaconda setop
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-eval "$(rbenv init -)"
-
-# Definitions of env variables for user
+# defaults
 export TERMINAL="st"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR="nvim"
-export BROWSER="brave-browser-stable"
-export READER="zathura"
-export FILE="ranger"
 export PAGER="less"
-export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+# fix "xdg-open fork-bomb" export your preferred browser from here
+export BROWSER="brave"
 
-# Add shortcuts
-if [ ! -f ~/.config/shortcutrc ] || [ ! -f ~/.local/share/mesarc ]; then
-    shortcuts
-fi
+# XDG variables
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
 
-# Interactive python bindings (see docs in ~/.config/python/python-startup)
-export PYTHONSTARTUP="$HOME/.config/python/python-startup.py"
+# miniconda
+[ -d $HOME/.local/bin/conda ] && eval "$(/home/asimazbunzel/.local/bin/conda/bin/conda shell.bash hook)"
 
-# Add locations to PYTHONPATH for my MESA tools
-export PYTHONPATH="$HOME/.mesa_tools"
+# shortcuts
+[ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc ] && shortcuts >/dev/null 2>&1 &
 
-# MESA settings
-#export MESA_DIR=$HOME/Developments/mesa-r10398
-#export MESASDK_ROOT=$HOME/Developments/mesasdk-r10398
-#export MESA_CACHES_DIR=$HOME/.mesa_caches
+# mesainit activate mesa software
+[ -f "$HOME/.local/bin/mesainit" ] && source "$HOME/.local/bin/mesainit"
