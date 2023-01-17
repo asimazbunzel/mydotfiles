@@ -1,13 +1,8 @@
 dw $HOME/Downloads
 docs $HOME/Documents
-github $HOME/Documents/github
-dots $HOME/Documents/github/dotfiles
-pa $WORKDIR_HDD/Documents/papers
-bo $WORKDIR_HDD/Documents/books
-pres $WORKDIR_HDD/Documents/presentations
+dots $HOME/Documents/dotfiles
 
-workdir $WORKDIR_HDD
+workdir /workdir
 
 dev $HOME/Developments
-prj $WORKDIR_HDD/Projects
-tux $WORKDIR_HDD/Documents/bin2bbh/evolution/tux
+prj $HOME/Projects
