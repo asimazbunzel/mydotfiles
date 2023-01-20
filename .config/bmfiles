@@ -7,3 +7,4 @@ cfi	~/Documents/dotfiles/.config/i3/config
 cfpo	~/Documents/dotfiles/.config/polybar/config
 cfr	~/Documents/dotfiles/.config/ranger/rc.conf
 cfm	~/Documents/dotfiles/.config/mutt/muttrc
+cfco ~/Documents/dotfiles/.config/conky/conky.conf
