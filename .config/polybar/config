@@ -88,7 +88,7 @@ font-3 = ${fonts.font-3}
 ;font-6 = ${fonts.font-6}
 
 modules-left = i3
-modules-right = memory cpu battery weather date
+modules-right = memory temperature cpu battery weather date
 ;modules-left = i3 lpd wifi ldl
 ;modules-right = rld memory rsd cpu rsd battery rdp weather rsp date
 
@@ -469,8 +469,8 @@ wrapping-scroll = true
 strip-wsnumbers = true
 pin-workspaces = false
 
-;format-padding = ${variables.label-padding}
-;format-background = ${colors.material-primary}
+format-padding = ${variables.label-padding}
+format-background = ${colors.material-dark-background}
 
 label-focused = %{T4}⚪%{T-} %index%
 label-focused-padding = ${variables.label-padding}
@@ -673,8 +673,8 @@ inherit = section/base_right_dark
 thermal-zone = 0
 warn-temperature = 70
 
-label = %{T5}%{T-} %temperature-c:3%
-label-warn = %{T5}%{T-} %temperature-c:3%
+label = %{T2}🌡️%{T-} %temperature-c:3%
+label-warn = %{T2}🌡️%{T-} %temperature-c:3%
 
 ;=====================================================
 ;   module/spotify
