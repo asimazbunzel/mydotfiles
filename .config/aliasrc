@@ -14,7 +14,8 @@ alias e="$EDITOR" \
    vimdiff="nvim -d" \
    r="ranger" \
    m="mutt" \
-   z="zathura"
+   z="zathura" \
+   tn="tmux new -s"
 
 alias df="df -h" \
    grep="grep --color=auto" \
