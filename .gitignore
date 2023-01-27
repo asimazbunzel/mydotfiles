@@ -17,3 +17,6 @@
 
 # zsh dump
 **/zsh/.zcompdump*
+
+# p10k zsh
+**/zsh/.p10k*
