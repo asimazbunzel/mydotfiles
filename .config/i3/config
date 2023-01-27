@@ -23,6 +23,8 @@ bindsym $mod+n border normal
 # toggle fullscreen on youtube video first, then run this and voilà
 # see: https://www.reddit.com/r/i3wm/comments/4a66pv/youtube_floater_play_youtube_videos_in_a_floating/
 bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 1415 20
+
+# this is used when running MESA simulations to also be able to see conky updates on CPU info
 bindsym $mod+Ctrl+space fullscreen disable; floating enable; resize set 1480 1036; move window to position 10 35
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -72,7 +74,6 @@ bindsym $mod+F5 exec st -e 'mocp'
 bindsym $mod+Shift+a exec /home/asimazbunzel/.local/bin/Discord/Discord
 bindsym $mod+Shift+w exec brave
 bindsym $mod+Shift+s exec slack
-bindsym $mod+Shift+t exec telegram-desktop
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 
@@ -81,8 +82,11 @@ bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
+# home-office two-screens layout
+bindsym $mod+F1 exec st -e '/home/asimazbunzel/.local/bin/screenlayout/home-office'
+
 # open help
-bindsym $mod+F1 exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+# bindsym $mod+F1 exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 
 # kill app
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
