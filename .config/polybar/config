@@ -48,7 +48,8 @@ label-maxlen = 50
 
 ; Text Fonts
 ;font-0 = Iosevka Nerd Font:style=Medium:size=9;2
-font-0 = Roboto:style=Regular:size=9;2
+;font-0 = Roboto:style=Regular:size=10;2
+font-0 = "UbuntuMono Nerd Font:style=Regular:weight=bold:antialias=true:pixelsize=10;2"
 
 ; Icons Fonts
 font-1 = "Noto Color Emoji:style=Regular:scale=12;2"
@@ -71,7 +72,7 @@ height = ${variables.bar-height}
 bottom = false
 fixed-center = true
 
-padding-left = 4
+padding-left = 1
 
 border-bottom-size = ${variables.bar-border-size}
 border-color = ${colors.material-dark-background}
@@ -92,8 +93,8 @@ modules-right = memory temperature cpu battery weather date
 ;modules-left = i3 lpd wifi ldl
 ;modules-right = rld memory rsd cpu rsd battery rdp weather rsp date
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = /
+module-margin-right = 1
 
 tray-position = right
 tray-padding = 5
@@ -492,7 +493,7 @@ type = internal/cpu
 inherit = section/base_right_dark
 interval = 0.5
 
-label = %{T2}🖥️%{T-} %percentage-cores:3%
+label = %{T3}🖥️%{T-} %percentage-cores:3%
 ;label = %{F#c0ca33}%{T2}🖥️%{T-} %percentage-cores:3%%{F-}
 
 ;=====================================================
@@ -673,7 +674,7 @@ inherit = section/base_right_dark
 thermal-zone = 0
 warn-temperature = 70
 
-label = %{T2}🌡️%{T-} %temperature-c:3%
+label = 🌡️ %temperature-c:3%
 label-warn = %{T2}🌡️%{T-} %temperature-c:3%
 
 ;=====================================================
