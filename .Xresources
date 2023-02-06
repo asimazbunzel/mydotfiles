@@ -12,7 +12,9 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 
-st.font: Monospace-9;
+! st.font: Monospace-9;
+*.font: UbuntuMono Nerd Font:pixelsize=16:antialias=true:autohint=true;
+
 *.alpha: 0.98
 
 

@@ -49,7 +49,7 @@ label-maxlen = 50
 ; Text Fonts
 ;font-0 = Iosevka Nerd Font:style=Medium:size=9;2
 ;font-0 = Roboto:style=Regular:size=10;2
-font-0 = "UbuntuMono Nerd Font:style=Regular:weight=bold:antialias=true:pixelsize=10;2"
+font-0 = "UbuntuMono Nerd Font:style=Regular:weight=bold:antialias=true:autohint=true:pixelsize=10;2"
 
 ; Icons Fonts
 font-1 = "Noto Color Emoji:style=Regular:scale=12;2"
