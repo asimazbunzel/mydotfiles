@@ -50,7 +50,7 @@ bindsym $mod+Ctrl+m exec st -e 'alsamixer'
 exec --no-startup-id mons -a > /dev/null 2>&1
 
 # keyboard layout config
-exec --no-startup-id setxkbmap -model pc105 -layout latam,us -variant ,altgr-intl -option 'grp:ctrl_alt_toggle'
+# exec --no-startup-id setxkbmap -model pc105 -layout latam,us -variant ,altgr-intl -option 'grp:ctrl_alt_toggle'
 
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -84,6 +84,9 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
 # home-office two-screens layout
 bindsym $mod+F1 exec st -e '/home/asimazbunzel/.local/bin/screenlayout/home-office'
+
+# US keyboard layout
+bindsym $mod+F2 exec /home/asimazbunzel/.local/bin/keyboardlayout
 
 # open help
 # bindsym $mod+F1 exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
