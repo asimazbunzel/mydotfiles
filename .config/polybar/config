@@ -493,8 +493,9 @@ type = internal/cpu
 inherit = section/base_right_dark
 interval = 0.5
 
-label = %{T3}🖥️%{T-} %percentage-cores:3%
+;label = %{T3}🖥️%{T-} %percentage-cores:3%
 ;label = %{F#c0ca33}%{T2}🖥️%{T-} %percentage-cores:3%%{F-}
+label = %{T3}🖥️%{T-} %percentage:2%%
 
 ;=====================================================
 ;   module/memory

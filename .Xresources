@@ -13,7 +13,8 @@ Xft.lcdfilter: lcddefault
 
 
 ! st.font: Monospace-9;
-*.font: UbuntuMono Nerd Font:pixelsize=16:antialias=true:autohint=true;
+! *.font: UbuntuMono Nerd Font:pixelsize=16:antialias=true:autohint=true;
+*.font: JetBrainsMono Nerd Font:style:medium:pixelsize=14
 
 *.alpha: 0.98
 
