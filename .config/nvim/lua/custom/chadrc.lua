@@ -1,25 +1,20 @@
--- Just an example, supposed to be placed in /lua/custom/
-
 local M = {}
 
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
+-- Path to overriding theme and highlights files
+local themes = require "custom.overidden_themes"
+local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "gruvchad",
+  theme_toggle = { "onedark", "one_light" },
+  theme = "dark_horizon",
+  changed_themes = themes,
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
 
-M.plugins = {
+M.plugins = require "custom.plugins"
 
-  user = {
-    ["neovim/nvim-lspconfig"] = {
-      config = function()
-        require "plugins.configs.lspconfig"
-        require "custom.lspconfig"
-      end,
-    },
-  }
-
-}
+-- check core.mappings for table structure
+M.mappings = require "custom.mappings"
 
 return M
