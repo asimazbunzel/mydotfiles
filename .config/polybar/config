@@ -21,9 +21,7 @@
 ;=====================================================
 [colors]
 material-foreground = #FFFFFF
-material-dark-background = #1F1F1F
-;material-foreground = #dedede
-;material-dark-background = #242424
+material-dark-background = #1A1B26
 material-light-background = #333333
 material-primary = #1e3687
 material-warn = #fc4138
