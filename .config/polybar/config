@@ -33,7 +33,7 @@ yellow = #008000
 ;   variables
 ;=====================================================
 [variables]
-bar-height = 22
+bar-height = 25
 bar-border-size = 0
 
 label-padding = 1
@@ -47,7 +47,7 @@ label-maxlen = 50
 ; Text Fonts
 ;font-0 = Iosevka Nerd Font:style=Medium:size=9;2
 ;font-0 = Roboto:style=Regular:size=10;2
-font-0 = "UbuntuMono Nerd Font:style=Regular:weight=bold:antialias=true:autohint=true:pixelsize=10;2"
+font-0 = "UbuntuMono Nerd Font:style=Regular:weight=bold:antialias=true:autohint=true:pixelsize=11;3"
 
 ; Icons Fonts
 font-1 = "Noto Color Emoji:style=Regular:scale=12;2"
@@ -56,7 +56,7 @@ font-1 = "Noto Color Emoji:style=Regular:scale=12;2"
 font-2 = "Iosevka Nerd Font:style=Medium:size=20;5"
 
 ; Smaller icons Fonts
-font-3 = "Noto Color Emoji:style=Regular:scale=18;1"
+font-3 = "Noto Color Emoji:style=Regular:scale=18;2"
 
 ;=====================================================
 ;   bar/top
@@ -601,6 +601,7 @@ type = custom/script
 inherit = section/base_right_dark
 ;inherit = section/base_right_primary
 exec = ~/.local/bin/polybar/weather
+click-left = sh ~/.local/bin/polybar/weather_notify
 tail = true
 interval = 5
 
