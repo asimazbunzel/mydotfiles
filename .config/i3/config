@@ -88,6 +88,9 @@ bindsym $mod+F1 exec st -e '/home/asimazbunzel/.local/bin/screenlayout/home-offi
 # US keyboard layout
 bindsym $mod+F2 exec /home/asimazbunzel/.local/bin/keyboardlayout
 
+# notebook layout
+bindsym $mod+F4 exec st -e '/home/asimazbunzel/.local/bin/screenlayout/notebook-only-screen'
+
 # open help
 # bindsym $mod+F1 exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 
