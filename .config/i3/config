@@ -71,7 +71,8 @@ bindsym $mod+Ctrl+b exec st -e 'bmenu'
 bindsym $mod+Shift+m exec st -e 'ranger'
 bindsym $mod+F5 exec st -e 'mocp'
 
-bindsym $mod+Shift+a exec /home/asimazbunzel/.local/bin/Discord/Discord
+bindsym $mod+Shift+a exec Discord
+bindsym $mod+Shift+z exec zoom
 bindsym $mod+Shift+w exec brave
 bindsym $mod+Shift+s exec slack
 bindsym $mod+F3 exec pcmanfm
