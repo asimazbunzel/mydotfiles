@@ -13,6 +13,9 @@ export LOCATION="la-plata"
 # miniconda
 [ -d $HOME/.local/bin/conda ] && eval "$(/home/asimazbunzel/.local/bin/conda/bin/conda shell.zsh hook)"
 
+# mambaforge
+[ -f /home/asimazbunzel/.local/bin/conda/etc/profile.d/mamba.sh ] && source "/home/asimazbunzel/.local/bin/conda/etc/profile.d/mamba.sh"
+
 # add $HOME/.local/bin to $PATH
 export PATH="$PATH:${$(find ~/.local/bin -type d -not -path "*conda*" -not -path "*st*" -not -path "*slack*" -printf %p:)%%:}"
 
