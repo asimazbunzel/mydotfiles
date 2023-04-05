@@ -8,6 +8,8 @@ if [ $? != 0 ]
 then
    st -e tmux new-session -d -s "$name" -n telegram
    st -e tmux send-keys -t "$name".0 "tg" ENTER
+   st -e tmux new-window -t "$name":1 -n neomutt
+   st -e tmux send-keys -t "$name":1 "neomutt" ENTER
 fi
 
 exec st -e tmux attach -t "$name"
