@@ -78,7 +78,7 @@ bindsym $mod+Shift+z exec zoom
 # web browser, slack, telegram
 bindsym $mod+Shift+w exec brave
 bindsym $mod+Shift+s exec slack
-bindsym $mod+Shift+t exec opentelegram
+bindsym $mod+Shift+t exec opencomms
 
 # file manager
 bindsym $mod+F3 exec pcmanfm
