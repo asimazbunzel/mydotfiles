@@ -71,10 +71,16 @@ bindsym $mod+Ctrl+b exec st -e 'bmenu'
 bindsym $mod+Shift+m exec st -e 'ranger'
 bindsym $mod+F5 exec st -e 'mocp'
 
+# discord & zoom
 bindsym $mod+Shift+a exec Discord
 bindsym $mod+Shift+z exec zoom
+
+# web browser, slack, telegram
 bindsym $mod+Shift+w exec brave
 bindsym $mod+Shift+s exec slack
+bindsym $mod+Shift+t exec opentelegram
+
+# file manager
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 
@@ -342,7 +348,7 @@ exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id /home/asimazbunzel/.config/conky/conkyx-start.sh
+exec_always --no-startup-id /home/asimazbunzel/.config/conky/conkyx-start.sh
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
