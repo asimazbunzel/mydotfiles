@@ -10,7 +10,7 @@ alias ls='ls -hN --color=auto --group-directories-first' \
 
 alias e="$EDITOR" \
    v="$EDITOR" \
-   vim="nvim" \
+   vim="lvim" \
    vimdiff="nvim -d" \
    r="ranger" \
    m="mutt" \

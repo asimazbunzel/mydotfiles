@@ -2,7 +2,7 @@
 
 # defaults
 export TERMINAL="st"
-export EDITOR="nvim"
+export EDITOR="lvim"
 export BROWSER="brave"
 export READER="zathura"
 export PAGER="less"
