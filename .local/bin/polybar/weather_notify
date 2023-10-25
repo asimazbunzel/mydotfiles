@@ -1,3 +1,0 @@
-#!/bin/sh
-
-dunstify "$(curl -s wttr.in/Berisso?format='Current:+%c%t\nWind:+%w\nHumidity:+%h\nMoon+phase:+%m\n')"

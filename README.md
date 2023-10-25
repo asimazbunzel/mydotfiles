@@ -1,6 +1,5 @@
 # Dotfiles
 
-All my config files. It is a combination of a lot of other repos
+Config files and scripts for my wayland, hyprland WM. Arch OS
 
-There is also a txt on the common steps I need to follow to install Manjaro along with some
-tricks needed to set everything up. Links to proper places with solutions found are there
+To complete some day...

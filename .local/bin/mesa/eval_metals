@@ -1,7 +1,0 @@
-#!/bin/sh
-
-set_composition () {
-   Y0=0.249; Ysun=0.28; Zsun=0.017
-   local y=$(echo "scale=8; $Y0 + ($Ysun - $Y0)*$1/$Zsun" | bc -l | awk '{printf "%.8f", $0}')
-   echo $y
-}
