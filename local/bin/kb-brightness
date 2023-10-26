@@ -10,15 +10,14 @@ get_backlight() {
 
 # Get icons
 get_icon() {
-	backlight="$(brightnessctl -d '*intel_backlight' g)"
-	current="${backlight%%%}"
-	if [[ ("$current" -ge "0") && ("$current" -le "1") ]]; then
-		icon="$iDIR/brightness-20.png"
-	elif [[ ("$current" -ge "1") && ("$current" -le "2") ]]; then
-		icon="$iDIR/brightness-60.png"
-	elif [[ ("$current" -ge "2") && ("$current" -le "3") ]]; then
-		icon="$iDIR/brightness-100.png"
-	fi
+  current=$(brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}')
+  if [[ ("$current" -le "20") ]]; then
+    icon="$iDIR/brightness-20.png"
+  elif [[ ("$current" -le "60") ]]; then
+    icon="$iDIR/brightness-60.png"
+  else
+    icon="$iDIR/brightness-100.png"
+  fi
 }
 
 # Notify
@@ -29,12 +28,12 @@ notify_user() {
 
 # Increase brightness
 inc_backlight() {
-	brightnessctl -d *intel_backlight set 33%+ && get_icon && notify_user
+	brightnessctl -d *intel_backlight set 10%+ && get_icon && notify_user
 }
 
 # Decrease brightness
 dec_backlight() {
-	brightnessctl -d *intel_backlight set 33%- && get_icon && notify_user
+	brightnessctl -d *intel_backlight set 10%- && get_icon && notify_user
 }
 
 # Execute accordingly
