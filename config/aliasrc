@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # use neovim for vim if present (from https://github.com/LukeSmithxyz/voidrice/blob/master/.config/aliasrc)
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
@@ -12,12 +10,7 @@ alias e="$EDITOR" \
    v="$EDITOR" \
    vim="lvim" \
    vimdiff="nvim -d" \
-   r="ranger" \
-   m="mutt" \
-   z="zathura" \
-   tn="tmux new -s" \
-   tl="tmux ls" \
-   ta="tmux attach"
+   z="zathura"
 
 alias df="df -h" \
    grep="grep --color=auto" \
@@ -25,5 +18,3 @@ alias df="df -h" \
    ipython="ipython --no-confirm-exit" \
    nano="nano -Sl" \
    bat="bat --wrap=never"
-
-alias plotdig="java -Xmx128m -jar $HOME/.local/bin/plot_digitizer/PlotDigitizer.jar 2>/dev/null"

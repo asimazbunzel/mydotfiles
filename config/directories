@@ -1,9 +1,9 @@
 dw $HOME/Downloads
 docs $HOME/Documents
-dots $HOME/Documents/dotfiles
-pa $HOME/Documents/papers
-bo $HOME/Documents/books
-pres $HOME/Documents/presentations
 
 dev $HOME/Developments
 prj $HOME/Projects
+
+dots $HOME/Developments/dotfiles
+
+bm $HOME/Documents/bookmarks

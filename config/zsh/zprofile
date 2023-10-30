@@ -1,0 +1,12 @@
+export EDITOR="nvim"
+export PAGER="less"
+
+# add $HOME/.local/bin to $PATH
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+
+# XDG variables
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export LESSHISTFILE="-"
