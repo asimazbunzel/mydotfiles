@@ -27,12 +27,13 @@ return {
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
-    local builtin = require('telescope.builtin')
+    local builtin = require("telescope.builtin")
 
     keymap.set("n", "<leader>b", function() builtin.buffers({sort_mru=true, ignore_current_buffer=true}) end)
     keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
     keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    keymap.set("n", "<leader>sS", require("telescope.builtin").git_status, { desc = "Fuzzy find changed files in a git repository" })
   end,
 }
