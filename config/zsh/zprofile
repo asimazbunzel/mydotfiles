@@ -1,8 +1,12 @@
 export EDITOR="nvim"
 export PAGER="less"
 
+# miniconda
+[ -d $HOME/.local/bin/conda ] && eval "$(/home/asimazbunzel/.local/bin/conda/bin/conda shell.zsh hook)"
+
+
 # add $HOME/.local/bin to $PATH
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:${$(find ~/.local/bin -type d -not -path "*conda*" -printf %p:)%%:}"
 
 # XDG variables
 export XDG_CONFIG_HOME="$HOME/.config"
