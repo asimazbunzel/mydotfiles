@@ -28,6 +28,7 @@ return {
         "gopls",
         "clangd",
         "asm_lsp",
+        "jedi_language_server",
       },
 
       -- auto-install configured servers (with lspconfig)
